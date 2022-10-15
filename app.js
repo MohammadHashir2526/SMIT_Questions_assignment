@@ -35,3 +35,45 @@ class PersonAccount {
   }
 }
   const person = new PersonAccount("Mohammad", "Hashir", 10000, 5000, "money");
+  /*
+  2) Create an automobile class. The class will have name, model, color, type: automatic or manual proper
+  ties and create different methods e-g: start() logs car is ready for 
+  drive, opendoor() logs door is open
+  */
+  class AutoMobile {
+    constructor(name, model, color, type) {
+      this.name = name;
+      this.model = model;
+      this.color = color;
+      this.type = type;
+      this.start();
+      this.opendoor();
+    }
+    start(){
+      console.log( "car is ready for drive");
+    }
+    opendoor(){
+      console.log("door is open");
+    }
+  }
+  const car = new AutoMobile("kia", 2022, "White", "auto");
+  console.log(car);
+  
+ /*
+ Create child classes of Automobile Car, Truck, Bus these classes
+  also have extra information like doors property, maxspeed.
+ */
+
+  class Truck extends AutoMobile {
+    constructor(name, model, color, type, maxSpeed, doors){
+        super(name, model, color, type);
+    this.maxSpeed = maxSpeed
+    this.doors = doors
+    }
+    
+  }
+
+  const truck = new Truck("Khyber", 2020, "red", "Manual", "120Kmph", 5);
+  truck.start();
+  truck.opendoor();
+  console.log(truck);
